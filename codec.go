@@ -22,15 +22,11 @@ func (j *jsonpbCodec) String() string {
 // based on https://github.com/mwitkow/grpc-proxy
 // Apache 2 License by Michal Witkowski (mwitkow)
 
-// Codec returns a proxying encoding.Codec with the default protobuf codec as parent.
-//
-// See CodecWithParent.
-func Codec() *rawCodec {
-	return CodecWithParent(&jsonpbCodec{})
+func codec() *rawCodec {
+	return codecWithParent(&jsonpbCodec{})
 }
 
-// CodecWithParent returns a proxying encoding.Codec with a user provided codec as parent.
-func CodecWithParent(fallback encoding.Codec) *rawCodec {
+func codecWithParent(fallback encoding.Codec) *rawCodec {
 	return &rawCodec{parentCodec: fallback}
 }
 

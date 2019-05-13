@@ -67,7 +67,7 @@ func New(options ...Option) (*Handler, error) {
 		o(h)
 	}
 
-	serverOptions := append(h.serverOptions, grpc.CustomCodec(Codec()))
+	serverOptions := append(h.serverOptions, grpc.CustomCodec(codec()))
 
 	h.server = grpc.NewServer(serverOptions...)
 
@@ -79,7 +79,7 @@ func New(options ...Option) (*Handler, error) {
 		grpc.WithContextDialer(dialer),
 		grpc.WithInsecure(),
 		grpc.WithDefaultCallOptions(
-			grpc.ForceCodec(Codec()),
+			grpc.ForceCodec(codec()),
 		),
 	}
 
