@@ -112,14 +112,6 @@ func WithServerOptions(options ...grpc.ServerOption) Option {
 	}
 }
 
-// WithAddress set the handler to use a network gRPC server
-// rather than creating an internal for local usage
-func WithAddress(address string) Option {
-	return func(h *Handler) {
-		h.address = address
-	}
-}
-
 // WithErrorLogger sets the ErrorLogger
 func WithErrorLogger(e ErrorLogger) Option {
 	return func(h *Handler) {
