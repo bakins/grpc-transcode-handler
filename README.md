@@ -2,6 +2,8 @@
 
 Go HTTP server handler for transcoding HTTP+JSON requests to gRPC.
 
+[![GoDoc](https://godoc.org/github.com/bakins/grpc-transcode-handler?status.svg)](https://godoc.org/github.com/bakins/grpc-transcode-handler)
+
 ## Why?
 
 I was doing a side project with [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) and decided to try something similar without code generation that would run in-process with the "real" gRPC server.
